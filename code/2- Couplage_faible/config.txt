@@ -1,0 +1,2 @@
+bean.Souris
+ord.Ordinateur
