@@ -1,9 +1,9 @@
 package bean;
 
 /**
- * @author Ezzaim Mohammed
- **/
+@author Ezzaim Mohammed
+**/
+
 public interface PeripheriqueUSB {
     void work();
 }
-

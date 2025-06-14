@@ -1,6 +1,6 @@
 package app;
 
-import bean.CleUSB;
+
 import bean.PeripheriqueUSB;
 import ord.Ordinateur;
 
