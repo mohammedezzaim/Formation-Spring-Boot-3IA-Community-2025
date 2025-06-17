@@ -1,4 +1,4 @@
-package tia.community.dependency_injection;
+package tia.community.constructor_injection;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

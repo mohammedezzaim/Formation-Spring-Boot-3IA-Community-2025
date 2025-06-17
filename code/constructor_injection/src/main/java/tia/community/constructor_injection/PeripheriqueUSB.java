@@ -1,4 +1,4 @@
-package tia.community.dependency_injection;
+package tia.community.constructor_injection;
 
 /**
  * @author Ezzaim Mohammed

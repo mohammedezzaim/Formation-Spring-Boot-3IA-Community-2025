@@ -1,10 +1,12 @@
-package tia.community.dependency_injection;
+package tia.community.constructor_injection;
 
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
 /**
  * @author Ezzaim Mohammed
  **/
+
 
 
 public class Souris implements PeripheriqueUSB{

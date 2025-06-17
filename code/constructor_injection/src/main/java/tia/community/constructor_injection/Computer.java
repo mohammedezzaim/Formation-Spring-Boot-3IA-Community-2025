@@ -1,4 +1,4 @@
-package tia.community.dependency_injection;
+package tia.community.constructor_injection;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
