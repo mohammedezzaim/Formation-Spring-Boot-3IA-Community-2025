@@ -8,6 +8,7 @@ import org.springframework.context.ApplicationContext;
 public class ConstructorInjectionApplication {
 
 	public static void main(String[] args) {
+		// 3IA Community
 		ApplicationContext ioc_container = SpringApplication.run(ConstructorInjectionApplication.class, args);
 
 		Computer computer = ioc_container.getBean(Computer.class);
