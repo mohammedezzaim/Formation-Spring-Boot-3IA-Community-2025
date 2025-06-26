@@ -1,4 +1,4 @@
-package tia.community.Architecture_en_Couche_1;
+package tia.community.architecture_en_Couche_1;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
