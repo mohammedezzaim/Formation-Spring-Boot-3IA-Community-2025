@@ -4,7 +4,8 @@ import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
 /**
- * @author Ezzaim Mohammed
+ * @author Ezzaim Mohammed 
+ * 3IA Community 
  **/
 
 @Component
