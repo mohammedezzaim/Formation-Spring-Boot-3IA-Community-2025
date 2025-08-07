@@ -16,43 +16,38 @@ public class SpringDataJpa1Application {
 	public static void main(String[] args) {
 		ApplicationContext ioc_container = SpringApplication.run(SpringDataJpa1Application.class, args);
 
-		ProduitDao produitDao = ioc_container.getBean(ProduitDao.class);
+		ProduitDao bean = ioc_container.getBean(ProduitDao.class);
 
-		//save
-		Produit produit1 = new Produit(null, "Lenovo", 10000.0, "electronique", true, 100, LocalDate.now());
-		produitDao.save(produit1);
+		Produit p1 = new Produit(null, "HP", 9000.0, "electronique", true, 200, LocalDate.of(2025, 7, 20));
+		Produit p2 = new Produit(null, "Lenovo", 10000.0, "electronique", true, 100, LocalDate.of(2025, 7, 21));
+		Produit p3 = new Produit(null, "Mac", 20000.0, "electronique", true, 40, LocalDate.of(2025, 7, 22));
+		Produit p4 = new Produit(null, "Chaise de bureau", 1200.0, "mobilier", true, 300, LocalDate.of(2025, 7, 23));
+		Produit p5 = new Produit(null, "Réfrigérateur", 5000.0, "électroménager", true, 50, LocalDate.of(2025, 7, 24));
 
-		Produit produit2 = new Produit(null, "HP", 9000.0, "electronique", true, 2, LocalDate.now());
-		produitDao.save(produit2);
+		bean.save(p1);
+		bean.save(p2);
+		bean.save(p3);
+		bean.save(p4);
+		bean.save(p5);
 
-		// findById
-		Produit foundProduit = produitDao.findById(1L).get();
-		System.out.println(foundProduit);
+		Produit foundProduit = bean.findByName("HP");
+		System.out.println(foundProduit.toString());
 
-		// findAll()
-		List<Produit> produits = produitDao.findAll();
-		System.out.println("*************************************************");
-		for (Produit produit: produits) {
-			System.out.println(produit);
+		List<Produit> electronic = bean.findByCategory("electronique") ;
+
+		System.out.println("electronique product");
+		for (Produit p: electronic){
+			System.out.println("---------------------------------------------");
+			System.out.println(p.toString());
 		}
-		System.out.println("*************************************************");
 
-		// deleteById
-		produitDao.deleteById(2L);
+		List<Produit> mobilier = bean.findByCategory("mobilier") ;
 
-		// delete
-		Produit deleteProduit = produitDao.findById(1L).get();
-		produitDao.delete(deleteProduit);
-
-		// count
-		Produit produit3 = new Produit(null, "Mac", 100000.0, "electronique", true, 5, LocalDate.now());
-		produitDao.save(produit1);
-
-		Produit produit4 = new Produit(null, "Dell", 9000.0, "electronique", true, 50, LocalDate.now());
-		produitDao.save(produit2);
-
-		Long countProduct = produitDao.count();
-		System.out.println("Nomber de produit est: "+ countProduct);
+		System.out.println("mobilier product");
+		for (Produit p: electronic){
+			System.out.println("---------------------------------------------");
+			System.out.println(p.toString());
+		}
 
 
 	}
