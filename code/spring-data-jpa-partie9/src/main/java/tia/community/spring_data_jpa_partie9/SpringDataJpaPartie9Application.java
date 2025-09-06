@@ -47,6 +47,7 @@ public class SpringDataJpaPartie9Application {
 				produit -> System.out.println(produit.affaicheWithDate())
 		);
 
+
 	}
 
 }
