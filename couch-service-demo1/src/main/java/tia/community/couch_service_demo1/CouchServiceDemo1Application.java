@@ -19,6 +19,7 @@ public class CouchServiceDemo1Application {
 		int check = productService.save(lenovo);
 		System.out.println(check);
 
+
 	}
 
 }
