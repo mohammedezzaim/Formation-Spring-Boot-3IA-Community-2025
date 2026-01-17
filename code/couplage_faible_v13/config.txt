@@ -1,2 +1,0 @@
-bean.Souris
-ord.Ordinateur
