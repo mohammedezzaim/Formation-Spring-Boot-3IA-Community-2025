@@ -35,11 +35,11 @@ public class CouchServiceDemo4Application implements CommandLineRunner {
 		Product p4 = new Product("Samsung Galaxy S23", 900.0, "Smartphone", true, 15, LocalDate.of(2025,12,20));
 		Product p5 = new Product("iPhone 14 Pro", 13000.0, "Smartphone", true, 12, LocalDate.of(2025,12,20));
 
-
 		productService.save(p1);
 		productService.save(p2);
 		productService.save(p3);
 		productService.save(p4);
 		productService.save(p5);
 	}
+
 }
