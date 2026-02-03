@@ -7,12 +7,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import tia.community.couch_service_demo4.entity.Product;
 import tia.community.couch_service_demo4.service.ProductService;
+import tia.community.couch_service_demo4.service.ProductServiceImpl;
 
 import java.time.LocalDate;
-import java.time.Month;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Objects;
 
 @SpringBootApplication
 public class CouchServiceDemo4Application implements CommandLineRunner {
