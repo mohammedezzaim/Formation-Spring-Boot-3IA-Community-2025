@@ -1,8 +1,13 @@
-package tia.community.couch_service_demo4.service;
+package tia.community.couch_service_demo4.service.impl;
 
+import org.springframework.data.domain.Auditable;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Isolation;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 import tia.community.couch_service_demo4.dao.ProductDao;
 import tia.community.couch_service_demo4.entity.Product;
+import tia.community.couch_service_demo4.service.facade.ProductService;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -10,6 +15,7 @@ import java.util.Map;
 import java.util.UUID;
 
 @Service
+@Transactional
 public class ProductServiceImpl implements ProductService {
 
     private final ProductDao productDao;
@@ -32,11 +38,13 @@ public class ProductServiceImpl implements ProductService {
         }
     }
 
+    @Transactional(readOnly = true)
     @Override
     public List<Product> findAll() {
         return productDao.findAll();
     }
 
+    @Transactional(readOnly = true)
     @Override
     public Product findByName(String name) {
 
@@ -53,6 +61,7 @@ public class ProductServiceImpl implements ProductService {
         }
     }
 
+    @Transactional(readOnly = true)
     @Override
     public List<Product> findByCategory(String category) {
         if (category == null || category.isBlank()) {
@@ -68,6 +77,7 @@ public class ProductServiceImpl implements ProductService {
         }
     }
 
+    @Transactional(readOnly = true)
     @Override
     public Product findById(Integer id) {
         if (id == null || id <= 0) {
@@ -151,9 +161,21 @@ public class ProductServiceImpl implements ProductService {
         }
     }
 
+
     @Override
     public void deleteAllByRefs(String... refs) {
         for (String ref : refs) {
+
+            if (ref.equals("2c076729-b7d4-4a39-96d7-663ccb946992")){
+                System.out.println("=================================");
+                System.out.println("Stop DB Mysql");
+                try {
+                    Thread.sleep(15000);
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
+                }
+                System.out.println("=================================");
+            }
             delete(ref);
         }
     }

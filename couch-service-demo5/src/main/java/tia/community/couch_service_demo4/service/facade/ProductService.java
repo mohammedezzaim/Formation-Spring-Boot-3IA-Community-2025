@@ -1,11 +1,9 @@
-package tia.community.couch_service_demo4.service;
+package tia.community.couch_service_demo4.service.facade;
 
 import tia.community.couch_service_demo4.entity.Product;
 
-import java.time.LocalDate;
 import java.util.List;
 import java.util.Map;
-import java.util.UUID;
 
 /**
  * @author Mohammed Ezzaim
