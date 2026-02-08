@@ -1,1 +1,0 @@
-packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"tia.community.couch_service_demo4"},{"l":"tia.community.couch_service_demo4.dao"},{"l":"tia.community.couch_service_demo4.entity"},{"l":"tia.community.couch_service_demo4.service"}];updateSearchResults();
