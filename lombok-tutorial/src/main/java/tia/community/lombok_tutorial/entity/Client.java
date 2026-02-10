@@ -24,4 +24,10 @@ public class Client {
 
     @Column(columnDefinition = "Text")
     private final String address;
+
+    private final String role;
+
+    public static ClientBuilder builder(){
+        return new ClientBuilder();
+    }
 }

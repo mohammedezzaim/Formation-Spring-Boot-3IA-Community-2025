@@ -18,20 +18,23 @@ public class LombokTutorialApplication {
 
 		ClientDao clientDao = ioc_container.getBean(ClientDao.class);
 
-		Client client1 = new Client(UUID.randomUUID().toString(), "3ia", "Community", "Marrakech Morocco Tranche 9, Lotissement Al Amal, Résidence Atlas Jardin, Bâtiment B, Appartement 12, Avenue Mohammed VI près du Grand Stade, Quartier M’hamid, à proximité du Centre Commercial, non loin de l’aéroport Menara, route de Targa, Commune Marrakech, Région Marrakech-Safi, Royaume du Maroc, Code postal 40000");
-		clientDao.save(client1);
+		Client tia_community = Client.builder()
+				.ref(UUID.randomUUID().toString())
+				.firstName("3ia")
+				.lastName("community")
+				.address("Marrakech Morocco")
+				.role("SUPER_CLIENT")
+				.build();
 
-		Client client2 = new Client(UUID.randomUUID().toString(), "3ia", "Community", "Marrakech Morocco Tranche 9, Lotissement Al Amal, Résidence Atlas Jardin, Bâtiment B, Appartement 12, Avenue Mohammed VI près du Grand Stade, Quartier M’hamid, à proximité du Centre Commercial, non loin de l’aéroport Menara, route de Targa, Commune Marrakech, Région Marrakech-Safi, Royaume du Maroc, Code postal 40000");
-		clientDao.save(client2);
+		Client mohammed = Client.builder()
+				.ref(UUID.randomUUID().toString())
+				.firstName("mohammed")
+				.lastName("mohammed")
+				.address("Marrakech Morocco")
+				.build();
 
-		if (client1.equals(client2)) {
-			System.out.println("The Both Client have The same characteristic");
-		} else {
-			System.out.println("!=");
-		}
-
-		System.out.println("hashCode Client 1:"+ client1.hashCode());
-		System.out.println("hashCode Client 2:"+ client2.hashCode());
+		clientDao.save(tia_community);
+		clientDao.save(mohammed);
 
 	}
 
